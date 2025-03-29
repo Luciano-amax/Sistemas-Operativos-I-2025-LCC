@@ -1,0 +1,24 @@
+
+echo "$$": Este comando te dará el PID (Process ID) del shell actual en el que estás trabajando. 
+    Es útil para saber qué proceso específico está ejecutando tu shell.
+
+
+env: Muestra todas las variables de entorno actuales. Estas variables contienen configuraciones importantes del sistema, 
+     como las rutas de búsqueda de ejecutables (PATH), el directorio home del usuario (HOME), el shell en uso (SHELL), entre otras.
+     También puedes usar env para ejecutar comandos con variables de entorno específicas.
+
+
+ps: Este comando te permite ver los procesos que están ejecutándose.
+    Sin opciones, muestra los procesos asociados a la terminal actual. 
+    Con opciones como ps aux o ps -ef, puedes ver todos los procesos del sistema con detalles como el PID, terminal asociada,
+     y el tiempo de CPU usado.
+
+
+tree: Muestra la estructura de directorios en forma de árbol a partir del directorio actual o especificado.
+      Puede limitarse a mostrar solo ciertos niveles de profundidad o solo directorios. 
+      Es una herramienta visual útil para entender la organización de archivos y carpetas.
+
+
+strace: Rastrea las llamadas al sistema y señales de un programa, lo que es muy útil para depuración. 
+        Puedes usarlo para ver cómo un programa interactúa con el sistema operativo, rastrear procesos hijos, 
+         y guardar la salida en un archivo.
