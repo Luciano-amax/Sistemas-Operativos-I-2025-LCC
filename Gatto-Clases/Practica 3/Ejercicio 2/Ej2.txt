@@ -1,0 +1,32 @@
+Thread A{
+
+	pthread_mutex_lock(&cond1);
+	a1;
+	condicion_1 = true;
+	pthread_mutex_unlock(&cond1)
+	
+
+	pthread_mutex_lock(&cond2);	
+	if(condicion_2 == true){
+		a2;
+		condicion_2 = false;
+	}
+	pthread_mutex_unlock(&cond2);
+	
+}
+
+Thread B{
+
+	pthread_mutex_lock(&cond1);	
+	if(condicion_1 == true){
+		b1;
+		condicion_1 = false;
+	}
+	pthread_mutex_unlock(&cond1);
+	
+
+	pthread_mutex_lock(&cond2);
+	b2;
+	condicion_2 = true;
+	pthread_mutex_unlock(&cond2)
+}

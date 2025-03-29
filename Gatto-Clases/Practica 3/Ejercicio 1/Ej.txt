@@ -1,0 +1,3 @@
+No es correcto, se deberia hacer el cond_singal 
+despues de poner en true a M y P, ya que poderia pasar que se ejecute
+el programa A con solo un ingrediente.

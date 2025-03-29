@@ -1,0 +1,9 @@
+getchar no es una llamada al sistema en sí mismo, 
+pero implementa una llamada al sisteam.
+
+La función ungetc() tiene el tipo:
+    		int ungetc(int char, FILE *stream)
+
+Lo que hace es pushea el char (castiado como unsigned char) devuelta al stream.
+El stream debe estar abierto para lectura.
+La misma retorno el carácter apilado, si falla, retorna EOF.

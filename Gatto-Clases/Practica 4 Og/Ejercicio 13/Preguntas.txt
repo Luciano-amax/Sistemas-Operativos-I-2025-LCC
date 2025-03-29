@@ -1,0 +1,10 @@
+Una de las similitudes se la cantidad de pasos que hacen ambos programas para realizar la 
+operacion. Otra similitud es que ambos invocan la misma cantidad de procesos.
+
+La primer diferencia notable es que en la version de MPI se usa paralelizacion (se va calculando en 
+parallelo). Mientras que en la version de Erlang no es asi, este es secuencial
+Otra diferencia, relacionada con la robusteza, es que cuando se muere un proceso en la version de MPI 
+el programa falla, pero en Erlang se pueden usar links para mitigar esto (haceindo que si falla uno se 
+trate de levantarlo denuevo, entre otras soluciones posibles).
+Una diferencia muy notable es que el programa en Erlang consume mucha mas memoria que el 
+programa en MPI.

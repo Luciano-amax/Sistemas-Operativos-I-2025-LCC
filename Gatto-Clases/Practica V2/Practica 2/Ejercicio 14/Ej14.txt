@@ -1,0 +1,8 @@
+Al usar un parallel for se usa un thread para cada iteracion.
+Es decir voy a tener len thread, que ejecutan r[s[i]] = true.
+
+Hay race condition, puede pasar que dos thread accedan a la posicion de un mismo dato a la 
+vez (pero no afectaria al programa ya que en ambos casos siempre se devuelve lo mismo,
+no se alteran los datos).
+
+Hay carrera benigna.

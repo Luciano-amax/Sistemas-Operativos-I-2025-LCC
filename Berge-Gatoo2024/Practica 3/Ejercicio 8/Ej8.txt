@@ -1,0 +1,7 @@
+Funciona sin usar mutex ni ninguna primitiva de sincronizacion debido a los while que poseen
+prod y cons (while(diff == B) y while(diff == 0) cumplen la funcion de un busy wait)
+Estos hacen que el prod y cons se queden esperando hasta que se cambie el valor de 
+diff().
+
+Con n consumidores el programa no funciona, puede pasar que haya un solo elemento a consumir y
+dos consumidores salgan del while a la vez, tratando de agarrar el unico producto a la vez.

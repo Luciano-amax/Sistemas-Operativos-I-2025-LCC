@@ -1,0 +1,6 @@
+Al realizar 'echo "$$"' en la consola, se obtiene el pid del proceso actual.
+
+env: permite modificar las variables de entorno. 
+ps: Muestra información de los procesos activos. 
+tree: Muestra los directorios como 'ramas' y los archivos como 'hojas', para una mejor visualización y organización 
+(se muestran los directorios en un formato de árbol).

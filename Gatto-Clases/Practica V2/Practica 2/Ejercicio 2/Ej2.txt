@@ -1,0 +1,7 @@
+Se comparten:
+    Variables globales
+    Heap
+
+No se comparten:
+    Stack
+    Registros

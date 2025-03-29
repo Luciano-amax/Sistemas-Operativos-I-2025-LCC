@@ -1,0 +1,4 @@
+Es correcto, esto se debe a que cuando hago signal el thread que recibe la señal se prepara para recibir el mutex, pero
+no corta lo que hace el thread que mando la señal. 
+Por lo tanto el programa B obtiene los 2 ingredientes y luego, al soltar el mutex, el programa A despierta.
+(No hay problemas debido a que es semantica mesa).

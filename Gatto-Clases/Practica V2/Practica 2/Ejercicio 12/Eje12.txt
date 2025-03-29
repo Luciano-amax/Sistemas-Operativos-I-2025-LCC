@@ -1,0 +1,11 @@
+El codigo hace lo siguiente:
+Se define un mutex global (llamado a)
+Un thread llamado foo que tomo el mutex global, imprime algo por pantalla y lo libera.
+
+En el main, se crea un therad (foo) se define un mutex (llamado b) igual al mutex global.
+Se toma este nuevo mutex, se imprime por pantalla y se libera.
+Finalmente se espera a que el thread anterior termine.
+
+-----
+Puede pasar que primero corra el thread y luego el codigo del main. La unica diferencia seria
+que los printf se ejecutan al revez, primero los del thread y luego los del main.

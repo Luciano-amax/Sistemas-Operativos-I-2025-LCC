@@ -1,0 +1,2 @@
+Lo que pasa cuando un programa que pidió memoria no la libera usando free antes de termina
+es que el mismo sistema operativo se encarga de liberarla (esto ocurre en los más modernos).

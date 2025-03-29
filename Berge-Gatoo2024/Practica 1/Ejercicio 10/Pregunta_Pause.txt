@@ -1,0 +1,5 @@
+Lo que ocurre al remplazar los for()'s por pause()'s es que no termina (se queda trabado), 
+ya que el sighandler solo puede manejar una señal a la vez. 
+Es decir, como el handler se está ejecutando no puede manejar la otra señal.
+(al estar manejando un SIGUSR1 y le llega otro SIGUSR1 este se queda en espera, no termina 
+con el primero)

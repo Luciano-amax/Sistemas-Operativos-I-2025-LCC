@@ -1,0 +1,19 @@
+Selct:
+Permite al programa monitorizar multiples file descriptors, hasta que alguno este "listo"
+para alguna operacion de I/O.
+Un file descriptor esta "listo" cuando se le pueden relizar operaciones I/O sin que 
+este se bloquee.
+Solo puede monitoriar aquellos file descriptors cuyo numero sea menor que el 
+FD_SETSIZE.
+
+
+Epoll:
+Permite monitorizar multiples file descriptors, hasta que alguno este "listo" para
+realizar alguna operacon de I/O.
+Epoll divide los file descriptors en 2 listas:
+Interest list: lista de file descriptors que pueden ser de interes para monitorizar.
+Ready list: lista de file descriptors "listos" para realziar la operacion, este es un subconjunto
+de la Interest list.
+
+La ventaja que da el uso de alguna de estas dos funciones es que se puden manejar multiples conexiones
+sin tener que crear multiples procesos.

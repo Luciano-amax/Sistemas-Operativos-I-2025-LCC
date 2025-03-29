@@ -1,0 +1,5 @@
+Lo que pasa es que se queda en bucle.
+Esto pasa porque al saltar el error de la division el programa deberia terminar,
+pero esto no pasa por el handler.
+Y luego trata de ejecutar la misma instruccion, pero como el handler no puede cambiar
+una variable global sigue siendo 0 esta, cometiendo el mismo error siempre.

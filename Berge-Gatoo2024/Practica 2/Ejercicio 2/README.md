@@ -1,0 +1,1 @@
+Los threads comparten heap y variables globales. No comparten ni registros ni stack.

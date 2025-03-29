@@ -1,0 +1,18 @@
+Una posible implementacion podria ser:
+
+int main(int argc, char *argv[]){
+
+    while(1){
+        if(argc <= 1)
+            printf("y\n");
+        else{
+            for(int i = 1; i < argc; i++)
+                printf("%s ", argv[i]);
+            printf("\n");
+        }
+    }
+}
+
+Al ejecuta 'yes | ./installer' el uso de CPU es bajo.
+Esto se puede deber a que yes no imprime continuamente, sino que espera a que 
+el comando installer le pida un texto de entrada.

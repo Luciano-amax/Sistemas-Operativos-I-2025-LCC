@@ -1,0 +1,17 @@
+a)
+Si hay un solo procesador sigue habiendo problemas, el thread se puede interrumpir por otras razones (como por ejemplo interrupciones).
+
+b)
+No serian necesarias, ya que es el mismo procesador y no habria problemas de consistencias.
+
+c)
+Al usar la instruccion incl no hay problemas debido a que las interrupciones ocurren
+antes o despues de la instruccion. Cuando hay un solo procesador nunca va a haber una
+ejecucion parcial.
+
+d)
+Habria problemas por la falta de atomicidad (esto se debe al store-buffering).
+
+e)
+En esta version se hace un lock antes de incrementar (la variable compartida).
+Por lo tanto no hay problemas, tanto con uno o vario procesadores.

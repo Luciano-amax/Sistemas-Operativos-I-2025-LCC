@@ -1,0 +1,23 @@
+a)
+Este programa puede terminar en deadlock, ya que si todos los filosofos agarran
+el tenedor derecho a la vez todos se van a quedar esperando al tenedor izquierdo,
+pero como ningun filosofos puede comer, por lo tanto nunca van a soltar el tenedor.
+
+b)
+Esta idea funciona porque al haber un filosofos zurdo no todos van a poder agarra su
+tenedor derecho a la vez, evitando el deadlock de antes.
+Si todos los derechos agarran el tenedor, el zurdo no va a poder y queda libre una tenedor
+izquierdo para un diestro. Y si el zurdo agarro el tenedor primero va a haber un distro
+ sin poder agarra su tenedor derecho.
+
+c)
+Esta solucion funcion debido a que no todos los filosofos van a comer a la vez. 
+Por lo tanto, se evita el deadlock anterior (va a haber al menos un filosofo que no pueda 
+agarrar su tenedor, dejandolo libre para otro filosofo).
+
+d)
+ Funcion a medias, al hacer eso evito un deadlock, pero puede pasar que ocurra un
+livelock (el filosofo que deja el tenedor puede volver a agarrarlo).
+No es muy eficiente (Hay momentos en los que se queda "trabado"), 
+pero es mejor a que pase esto a un deadlock.
+

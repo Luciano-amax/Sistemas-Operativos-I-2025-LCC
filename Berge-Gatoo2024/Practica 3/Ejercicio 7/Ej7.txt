@@ -1,0 +1,30 @@
+a)
+Si puede ocurrir un deadlock, por ejemplo
+Se tiene lo siguiente:
+Fumador 1, posee fosforos
+Fumador 2, posee papel
+Fumador 3, posee tabaco
+
+Si el fumador 2 "recibe" tabaco y el fumador 3 "recibe" fosforos entonces, nadie 
+va a poder armarse un cigarrillo, ya que a todos les va a faltar al menos 
+un ingrediente y el agente no va a hacer nada. 
+Obteniendo asi un deadlock.
+
+b)
+No se puede reordenar el codigo, ya que al reordenar el codigo se evita el deadlock en un solo 
+caso, pero puede haber un deadlock debido a los otros casos.
+
+c)
+La solucion implementada consiste en que cada fumador antes de agarrar los ingredientes se 
+fija si son los que necesita, si lo son los agarra, sino no los agarra y espera a que otro
+fumador los agarre y fume.
+
+d) 
+Si fuera posible modificar al agente lo que se puede hacer es que este le entregue los ingredientes 
+al formador que posee el tercero, asi siempre se va a fumar y no habria deadlock.
+
+e)
+La relacion que tiene este ejercicio con el servidor de turnos de la practica anterior es que 
+el agente se puede ver como el servidor y los fumadores como los clientes. 
+Entonces cuando un fumador pide ingredientes al agente, es similar a los clientes 
+haciendole un pedidio al servidor. 

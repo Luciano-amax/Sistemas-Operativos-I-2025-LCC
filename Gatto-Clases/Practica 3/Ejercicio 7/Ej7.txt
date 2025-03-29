@@ -1,0 +1,19 @@
+a) 
+Fumador 1, posee fosforos
+Fumador 2, posee papel
+Fumador 3, posee tabaco
+
+Si el fumador 2 "recibe" tabaco y el fumador 3 "recibe" fosforos entonces, nadie
+va a poder armarse un cigarrilo, ya que a todos les va a faltar al menos 
+un ingrediente y el agente no va a hacer nada. 
+
+
+b)
+No se puede reordenar el codigo
+Se puede reordenar, moviendo el semaforo otra_vez antes de los ingredientes
+
+c)
+
+
+d) Si se puede modificar al agente lo que se puede hacer es que este le entrege los ingredientes
+al fomador que posee el tercero, asi siempre se va a fumar.

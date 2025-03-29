@@ -1,0 +1,15 @@
+select(): esta función permite al programa monitorizar múltiples File Descriptor,
+esperando hasta que uno o más estén 'listos' para realizar alguna operación del tipo I/O.
+Se considera que un File Descriptor esta 'listo' cuando es posible realizar 
+Una operación I/O sin ser bloqueada.
+
+
+epoll(): monitorea múltiples File Descriptors, para ver si es posible
+realizar alguna operación de I/O. El concepto central de epoll es él
+'epoll instance', una estructura en el kernel donde se distinguen dos lista
+* 'interest list': conjunto de File Descriptor que el proceso quiere monitorizar
+* 'ready list': conjunto de File Descriptor que están 'listos' (es un sub conjunto de la 'interest list')
+
+
+La principal ventaja que tiene select() (/epoll()) es que puede manejar múltiples conexiones 
+sin tener que crear múltiples procesos (0 hilos)

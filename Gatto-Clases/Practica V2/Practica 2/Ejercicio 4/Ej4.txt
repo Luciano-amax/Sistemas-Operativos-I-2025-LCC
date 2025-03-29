@@ -1,0 +1,3 @@
+No falla, simpre se va a poner x = 123 y luego al cambiar el de y, se sale del while.
+(ocurre siempre debido que x e y son de tipo volatile)
+

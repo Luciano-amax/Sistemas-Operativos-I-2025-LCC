@@ -1,0 +1,3 @@
+Puede pasar que primero se ejecute al thread1 y tome el mutex1, pero antes de poder tomar el mutex2
+ se ejecute thread2 y tome el mutex2.
+ Luego ningun thread va a poder tomar el siguietne mutex y se genera un deadlock.

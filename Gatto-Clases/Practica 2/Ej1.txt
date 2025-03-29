@@ -1,0 +1,2 @@
+Si hay diferencia, la primera cambia el valor de "una" mientras la segunda, opera con el valor anterior
+Entonces si hay varios hilos puede pasar que la comparacion A[i] == 42 pise un True con un False

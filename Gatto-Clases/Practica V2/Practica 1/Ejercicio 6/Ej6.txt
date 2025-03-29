@@ -1,0 +1,6 @@
+getchar no es en si una llamada al sistema, 
+esta implementa la llamada al sistema ungetc()
+
+La funcion ungetc() pushea un byte (que seria el char) al stream del sistema,
+el stream debe estar abierto para lectura, retorna el char si pudo ser apillado. 
+Sino retorna EOF.

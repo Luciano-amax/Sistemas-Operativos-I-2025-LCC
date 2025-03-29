@@ -1,0 +1,9 @@
+Al usar pause el progama se queda bloqueado, ya que el handler maneja una señal a la vez.
+Entonces no puede manejear la segunda señal (Se queda con la primera y no termina)
+
+-----------------------------------------------------
+Correcion:
+Al usar pause en vez de for el programa termina, ya que al llamar a pause el proceso queda
+bloqueado hasta ser terminado o recibir una señal, lo que hace que el rebote de señales
+se preoduzca un numero infinito de veces ya que en algun momeneto el proceso continua
+y termina.

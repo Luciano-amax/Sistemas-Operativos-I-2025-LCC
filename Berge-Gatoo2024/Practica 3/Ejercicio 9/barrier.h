@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+struct barrier {
+    pthread_cond_t cv;
+    pthread_mutex_t mutex;
+    int waiting_processes;
+    int n;
+};
+
+void barrier_init(struct barrier* b, int n) {
+    pthread_cond_init(&b->cv, NULL);
+    pthread_mutex_init(&b->mutex, NULL);
+    b->waiting_processes = 0;
+    b->n = n;
+}
+
+void barrier_wait(struct barrier *b) {
+    pthread_mutex_lock(&b->mutex);
+    if(b->waiting_processes == b->n-1)
+    {
+        // Soy el n-esimo hilo que llega a la barrera
+        b->waiting_processes = 0;
+        // Despierto a todos los hilos
+        pthread_cond_broadcast(&b->cv);
+    }
+    else
+    {
+        // Llegue a la barrera antes, espero al siguiente
+        b->waiting_processes++;
+        // Me pongo a esperar a que lleguen los demas hilos
+        pthread_cond_wait(&b->cv, &b->mutex);
+    }
+    // Libero el lock
+    pthread_mutex_unlock(&b->mutex);
+}

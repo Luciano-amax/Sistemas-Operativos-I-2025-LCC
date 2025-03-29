@@ -1,0 +1,19 @@
+sem_t condicion1, condicion2;
+sem_init(&condicion1, 0, 0);
+sem_init(&condicion2, 0, 0);
+
+Thread A{
+    a1;
+    sem_post(&condicion1);
+
+    sem_wait(&condicion2);
+    a2;
+}
+
+Thread B{
+    sem_post(&condicion2);
+    b1;
+
+    sem_wait(&condicion1);
+    b2;
+}

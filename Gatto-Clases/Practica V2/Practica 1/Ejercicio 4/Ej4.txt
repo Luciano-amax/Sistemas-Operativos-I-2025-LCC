@@ -1,0 +1,4 @@
+En la mayoria de los S.O. modernos son ellos los que se encargan encarga de liberar lo
+usado si no se libero con free antes de terminar.
+Pero si el sistema operativo no hace esto, el espacio reservado no se puede usar mas
+(hasta que se reinicie el PC).

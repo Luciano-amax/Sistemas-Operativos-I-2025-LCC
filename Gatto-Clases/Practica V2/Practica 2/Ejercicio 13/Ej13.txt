@@ -1,0 +1,2 @@
+No anda, puede pasar que uno de los procesos no vea que se actualizo turno y entrarian ambos
+a la region critica a la vez.

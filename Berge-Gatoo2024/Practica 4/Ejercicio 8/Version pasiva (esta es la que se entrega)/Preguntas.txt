@@ -1,0 +1,15 @@
+a)
+Server Erlang:
+    Puede soportar 200, 2000 y 20000 conexiones simultaneas.
+Server PThread
+    Puede soportar 200 conexiones simultaneas.
+    No puede soportar 2000 ni 20000 conexiones simultaneas.
+    (aun usando ulimit -n 100000 solo acepta un poco mas de 1000 conexiones).
+
+b)
+Para una misma cantidad de clientes se tiene que el server en Erlang
+consume mas memoria que el server en PThread.
+Esto se puede deber a que Erlang corre en una maquina virtual.
+
+c)
+El servidor en Erlang soporta 50000 conexiones simultaneas, el de PThread no puede.

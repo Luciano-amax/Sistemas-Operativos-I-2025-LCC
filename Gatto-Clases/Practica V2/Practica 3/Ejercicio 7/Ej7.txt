@@ -1,0 +1,25 @@
+a)
+Si puede ocurrir un deadlock.
+Si el fumador 1 necesita papel y tabaco para fumar, puede pasar que el agente 
+suministre estos ingredientes y sean agarrados por los otro fumadores, haciendo que 
+ninguno tenga los 3 ingredientes para poder fumar. O que el fuamador 1 solo logre agarrar uno
+de los ingredientes.
+
+b)
+No pueden ordenarse los recursos para evitar esto, ya que al ordenarlos de forma 
+distinta podria pasar que con otro fumador se obtenga un deadlock similar 
+(no evitando el problema).
+
+c)
+Una solucion para el problema sin cambiar al agente es hacer que el fumador que 
+necesite los ingredientes sea el que los agarre.
+
+d)
+Si se puede cambiar el agente hago que este le entrege directamente los ingredientes 
+al fumador que los necesita.
+
+e)
+La relacion de este ejercicio con el server por turnos de la practica anterior es 
+que el agente hace de servidor y los fumadores de clientes.
+Ya que estos ultimos hacen peteciones al server (A.K.A. agente) 
+(la cual son los ingredientes que ofrece).

@@ -1,0 +1,14 @@
+a) No se imprime nada de lo que se le pasa al escribir en el mismo.
+b) No se puede leer de la entrada estándar si la cerramos.
+c) Al cerrar la copia, se cierra uno de los punteros, pero el original sigue abierto.
+d) Al hacer un fork() el valor del getpid() es igual si es el Parent y cambia si es el Child.
+   Y al hacer exec se mantiene igual.
+e) El hijo aparece como un zombi. Sigue existiendo debido a que al no usar wait() el padre termina antes (???)
+f) No, malloc no aumenta la memoria de un proceso (???)
+g) Memoria del proceso al realizar fork(): En el Parent se mantiene igual.
+                                           En el Child se copia a demanda (se copia si se usa).
+   Memoria del proceso al realizar exce(): En exce al correrlo, se pisan los datos del programa anterior.
+                                           con los del nuevo
+h) File descriptor al hacer fork(): Se mantienen iguales en el Parent y el Child (comparten tabla).
+   File descriptor al hacer exec(): Se pierden, se reemplaza por las del nuevo programa ._. ???
+i) ???

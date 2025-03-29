@@ -1,0 +1,6 @@
+a)
+Funciona sin el uso de primitivas de sincronizacion porque ambos procesos poseen un 
+busy-waiting. Esto hace que un procesos espere a que el otro que termine sin entrar en  
+su region critica.
+
+No se puede generalizar para n procesos.

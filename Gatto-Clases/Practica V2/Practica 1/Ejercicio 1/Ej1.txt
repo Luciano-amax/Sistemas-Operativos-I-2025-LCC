@@ -1,0 +1,11 @@
+Al correr el comando 'echo "$$"' se obtiene el PID del proceso actual
+
+env:
+Da un listado de las variables de entorno y permite ejecutar programas
+con dichas varibales sin modificarlas.
+
+ps:
+Da informacion del los procesos activos actuales
+
+tree:
+Permite visualzar un directorio como si fuera una "arbol".

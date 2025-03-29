@@ -1,0 +1,19 @@
+a) Pude terminar en deadlock ya que todos los filosofos pueden tomar el 
+tenedor derecho a la vez y esto hace que se queden esperando el izquierdo
+(el cual es el derecho de otro filosofo). Y como estan esperando todos, 
+ninguno puede pedir el otro tenedor para comer y dejar libre el suyo.
+
+
+b) Funcion al haber un zurdo, ya que como el tenedor izquierdo del zurdo 
+es el derecho de otro, por lo tanto no todos va a poder agarrar el tenedor a la vez
+evitando el deadlock de antes.
+
+
+c) Funcion ya que al haber uno que no come sus tenedores quedan libre para
+que otros puedan comer, evitando asi el deadlock de antes.
+
+
+d) Funcion a medias, al hacer eso evito un deadlock, pero puede pasar que ocurra un
+livelock (el filosofo que deja el tenedor puede volver a agarrarlo).
+No es muy eficiente (Hay momentos en los que se queda "trabado"), 
+pero es mejor a que pase esto a un deadlock

@@ -1,0 +1,7 @@
+Puede fallar debido a que se pueden reoredenar la forma en la que se guardan 
+los datos (y ademas por las caches de los pthread).
+
+Para solucionar esto se puede poner un mfence luego de cada signacion de x/y.
+
+(Puede pasar que reordene primero la asignacion de a y b antes que el de x e y, de esta
+forma a or b es 0, fallando el assert. Osea primero de ejecuta a=y=0 y b=x=0 antes de x=1 e y=1).

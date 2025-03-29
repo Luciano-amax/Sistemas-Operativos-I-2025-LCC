@@ -1,0 +1,39 @@
+a)
+Al cerrar el file descriptor de la salida estandar, se puede seguir escribiendo.
+No se va a poder imprimir nada
+
+b)
+Al cerrar el file descriptor de la entrada estandar, se va a poder seguir imprimiendo.
+No se va a poder leer nada.
+
+c)
+Al duplicar un file descriptor con dup() y cerrar las copias, el file descriptor original
+se mantiene abierto. Ya que lo que se cierra es la copia.
+
+d)
+Al hacer un fork() solo cambia el PID del hijo (que es una copia del original, 
+es decir un nuevo programa), el PID del padre se mantiene igual al del programa original 
+(el padre es el programa original).
+
+Al hacer un excel el PID del nuevo programa es igual al del original.
+
+e)
+El hijo aparece como zombi, esto se debe a que no fue esperado por el padre (se debio usar wait)
+
+f)
+Al hacer malloc se incrementa el heap del proceso, por lo tanto aumenta la memoria del proceso
+
+g)
+Memoria al usar fork: en el padre (proceso original) se mantiene igual
+                      en el hijo se copia a demanda (se copia lo que se usa)
+
+Memoria al usar excel: se pisan los datos del programa anterior con el nuevo (se pierden).
+
+h)
+File descriptor al usar fork: el padre y el hijo comparten la tabla (esto es ven
+lo mismo, la del hijo es una copia de la del padre, que es la original)
+
+File descriptor al usar excel: se pierden los del programa original, y se obtienen los del nuevo
+(Creo que los del prog. original sigune existiendo en la File Table, pero el nuevo programa 
+no puede acceder a ellos)
+

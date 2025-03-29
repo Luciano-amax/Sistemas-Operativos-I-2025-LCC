@@ -1,0 +1,24 @@
+a)
+Deberian ser validos P2, P3, P4 por tener apellido garcia.
+
+b)
+helloworld == 'helloworld',  %true
+
+"helloworld" < 'helloworld', %false
+    Una lista es mayor que un datos cualquiera
+
+helloworld == "helloworld",  %false
+    Una lista es mayor que un datos cualquiera
+    
+
+[$h,$e,$l,$l,$o,$w,$o,$r,$l,$d] == "helloworld", %true
+    Da true ya que compara char por char entre el string (que es una lista de char) y una lista de char
+
+[104,101,108,108,111,119,111,114,108,100] < {104,101,108,108,111,119,111,114,108,100}, %flase
+    Da false porque no se puede comparar un tupla con una lista
+
+[104,101,108,108,111,119,111,114,108,100] > 1, %true
+    Da tru porque una lista siempre es mayor que cualquier numero
+
+[104,101,108,108,111,119,111,114,108,100] == "helloworld" %true
+    Da true por que los numeros se corresponden al ascii del string (un string es una lista)

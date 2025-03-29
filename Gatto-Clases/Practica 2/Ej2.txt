@@ -1,0 +1,3 @@
+Los compunentes que comparten los threads de un programa son:
+* Heap
+* Variables globales

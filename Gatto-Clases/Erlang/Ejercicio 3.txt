@@ -1,0 +1,1 @@
+El problema de esta implementacion es que el random simpre va a dar el mismo numero

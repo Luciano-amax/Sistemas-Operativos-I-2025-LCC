@@ -1,0 +1,5 @@
+Es correcto, ya que al momento en el que se despierte el programa A
+ambas variables booleanas van a estar en True.
+(El signal despierta al programa A y este se prepara para recibir el mutex,
+y este lo recibe luego de poner ambas variables en True, es decir cuando B lo
+libera).
