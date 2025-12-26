@@ -1,0 +1,3 @@
+En el ítem 5.1 donde se aclara el tamaño del campo <tamaño_chunk_actual_bytes>, dice 2 bytes cuando debería decir 4 bytes.
+
+En el ítem 3.1.5., los comandos listados son a modo de ejemplo. Cada equipo puede definir los comandos que crea convenientes y que permita iteractuar de forma efectiva para hacer búsquedas de archivos, descargarlos, compartirlos, etc. La lista de comandos de la Interfaz de usuario debería estar documentada o mostrarse al intentar interactuar con el programa. 

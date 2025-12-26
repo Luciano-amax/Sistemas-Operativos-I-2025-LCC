@@ -1,0 +1,69 @@
+# Mensajes UDP
+
+A fin de poder descubrir otros nodos P2P activos en la red, utilizaremos mensajes UDP para que cada uno anuncie su presencia y pueda consensuar un identificador único con el resto de la red en su inicialización.
+
+Estos mensajes son:
+* **`HELLO`**
+* **`NAME_REQUEST`**
+* **`INVALID_NAME`**
+
+Un nodo debe esperar la llegada de mensajes UDP *en todas las IPs posibles* en el puerto `12346`. Es importante escuchar en todas las IPs ya que los mensajes pueden llegar mediante un broadcast o un unicast (mensaje enviado directamente de un nodo a otro), dependiendo del tipo de mensaje.
+
+Los identificadores de los nodos deben ser únicos y estarán representados por cuatro caracteres alfanuméricos (a-z, A-Z, 0-9). Por ejemplo, `k8fG` sería un id válido.
+
+Por consistencia, todos los mensajes listados deberán finalizar en un carácter newline `\n`. Además, el contenido de todos los mensajes serán caracteres ASCII, incluyendo tanto los nombres de los mensajes, como sus parámetros.
+
+## Mensaje `HELLO`
+
+```
+HELLO <id_nodo> <puerto_tcp>\n
+```
+
+### Parámetros
+
+* **`id_nodo`**: Id del nodo anunciado, según fue especificado anteriormente.
+* **`puerto_tcp`**: Puerto en el que corre el servidor TCP del nodo anunciado con el identificador `id_nodo`, codificado en decimal con caracteres ASCII.
+
+### Descripción
+
+Mientras un nodo esté activo, debe enviar un mensaje `HELLO` al resto de nodos mediante un **broadcast** (es decir, a la dirección `255.255.255.255`) periódicamente en un intervalo de entre 15 a 20 segundos. De esta forma, cada nodo debe mantener una lista de los nodos activos en la red, almacenando la IP de origen del mensaje `HELLO`, su `id_nodo` y el `puerto_tcp` en el que corre el servicio TCP de la aplicación P2P.
+
+Si al cabo de 45 segundos un nodo no recibió este mensaje de parte de otro nodo, puede asumirse su desconexión.
+
+## Mensaje `NAME_REQUEST`
+
+```
+NAME_REQUEST <id_nodo>\n
+```
+
+### Parámetros 
+* **`id_nodo`**: Id solicitada para asignar a este nodo.
+
+### Descripción
+
+Cuando un nodo se inicializa debe enviar un mensaje de este tipo al resto de nodos mediante un **broadcast**, con el `id_nodo` con el cual quiere incorporarse a la red. Luego, el nodo debe aguardar un intervalo de 10 segundos en espera de un mensaje del tipo `INVALID_NAME <id_nodo>` que podría recibir mediante un **unicast** de parte de otro nodo, donde `id_nodo` es el mismo id que solicitó en su name request. En caso de recibir un mensaje de este tipo, esperará un tiempo aleatorio entre 2 a 10 segundos, y reintentará la solicitud. Caso contrario, se asume que el id está disponible, y lo asume como propio.
+
+Si bien al reintentar la solicitud de un id se puede utilizar el mismo id solicitado anteriormente, se sugiere la generación de otro id de forma aleatoria para asegurar la pronta incorporación del nodo a la red.
+
+Ver la especificación de [`INVALID_NAME`](#msg-invalid-name) sobre la generación de este mensaje.
+
+## Mensaje `INVALID_NAME`
+<a name="msg-invalid-name"></a>
+
+```
+INVALID_NAME <id_nodo>\n
+```
+
+### Parámetros 
+* **`id_nodo`**: Id solicitada a rechazar.
+
+### Descripción
+
+Si un nodo recibe un mensaje `NAME_REQUEST` mediante un **broadcast**, éste debe comprobar si:
+
+* El id solicitado coincide con su propio id.
+* El mismo id ya fue solicitado en una `NAME_REQUEST` enviada por este nodo anteriormente.
+
+En caso de cumplirse alguna de estas condiciones, el nodo deberá responder mediante un **unicast** al remitente de la `NAME_REQUEST` recibida, indicando el `id_nodo` que éste haya solicitado, rechazando la solicitud. Caso contrario, no emitirá ningún mensaje en respuesta.
+
+Notar que, sin la segunda condición para la emisión de este mensaje, sería posible que dos nodos se unan simultaneamente con el mismo id, ya que no llegarían a responderse `INVALID_NAME` entre sí. Además, resulta necesaria la inclusión del `id_nodo` invalidado, con el fin de evitar un escenario en el que un nodo reciba un `INVALID_NAME`, elija un nuevo id, y reciba un `INVALID_NAME` para el id anteriormente solicitado, pero que incorrectamente suponga que se refiere al nuevo id.

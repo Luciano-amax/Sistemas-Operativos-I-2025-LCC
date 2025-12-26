@@ -1,0 +1,11 @@
+% DEFINICIONES PARA EL SERVIDOR
+-define(DIR, "localhost").
+-define(SHARED_DIR, "./shared").
+-define(PORT_UDP, 12346).
+-define(ID_WAIT, 5000). % (Especificación: 10 seg.)
+-define(HELLO_WAIT, 10000). % (Especificación: 15-20 seg.)
+-define(RETRY_WAIT, 2000). % (Especificación: 2-10 seg.)
+-define(BLOCKSIZE, 4096).
+-define(OK,101).
+-define(NOTFOUND,102).
+-define(CHUNK,111).
