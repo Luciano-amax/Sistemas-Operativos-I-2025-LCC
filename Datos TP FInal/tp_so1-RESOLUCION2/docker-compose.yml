@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  node1:
+    image: erlang-download-server
+    container_name: node1
+    networks: [erlang-net]
+    ports:
+      - "5000:12345"
+      - "5001:12346"
+
+  node2:
+    image: erlang-download-server
+    container_name: node2
+    networks: [erlang-net]
+    ports:
+      - "5002:12345"
+      - "5003:12346"
+
+networks:
+  erlang-net:
+    driver: bridge

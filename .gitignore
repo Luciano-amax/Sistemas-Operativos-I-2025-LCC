@@ -1,0 +1,6 @@
+*.beam
+*.dump
+erl_crash.dump
+/descargas/*
+/compartida/*
+.vscode/

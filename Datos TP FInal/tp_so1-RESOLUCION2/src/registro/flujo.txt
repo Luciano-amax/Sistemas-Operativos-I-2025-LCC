@@ -1,0 +1,8 @@
+El flujo del sistema de registro es el siguiente:
+1. Al levantar el nodo, el mismo llama a name_request:start
+2. Este proceso corre hasta que el nodo logra conectarse. Cuando la conexión se establece, el nodo levanta 
+un hello_broadcaster (modulo hello) y un udp_listener
+3. El hello_broadcaster envia mensajes de hello cada 15-20s a el resto de nodos por Broadcast
+4. El udp_listener maneja mensajes de hello (a traves de hello_handler) y de name_request (a traves de invalid_name)
+
+FALTA PARALELIZAR EL MANEJO DE MENSAJES EN UDP_LISTENER
